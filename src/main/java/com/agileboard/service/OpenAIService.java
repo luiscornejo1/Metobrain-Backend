@@ -10,15 +10,14 @@ import java.util.List;
 @Service
 public class OpenAIService {
 
-    private final WebClient webClient;
+    @Value("${openai.api.key}")
+    private String openAiApiKey;
 
-    public OpenAIService(@Value("${openai.api.key}") String openAiApiKey) {
-        this.webClient = WebClient.builder()
-                .baseUrl("https://api.openai.com/v1/chat/completions")
-                .defaultHeader("Authorization", "Bearer " + openAiApiKey)
-                .defaultHeader("Content-Type", "application/json")
-                .build();
-    }
+    private final WebClient webClient = WebClient.builder()
+            .baseUrl("https://api.openai.com/v1/chat/completions")
+            .defaultHeader("Authorization", "Bearer " + System.getenv("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")) // O usa la variable
+            .defaultHeader("Content-Type", "application/json")
+            .build();
 
     public Mono<String> generarIdeas(List<String> productBacklog) {
         String prompt = """
