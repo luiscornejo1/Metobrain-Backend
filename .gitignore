@@ -33,5 +33,4 @@ build/
 .vscode/
 
 
-# 🚫 Evitar subir configuraciones sensibles
-src/main/resources/application.properties
+
