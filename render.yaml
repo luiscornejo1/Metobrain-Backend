@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: agileboard-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:5432/postgres
+      - key: SPRING_DATASOURCE_USERNAME
+        value: postgres.vtytkzdcgmxhxhusrtki
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: AUG7U44NTWxY7Rli
+      - key: OPENAI_API_KEY
+        value: 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
