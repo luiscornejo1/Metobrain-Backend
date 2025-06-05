@@ -10,8 +10,6 @@
 /out/
 
 # Evitar archivos de configuración sensibles
-/src/main/resources/application.properties
-/src/main/resources/application.yml
 
 ### Maven ###
 .mvn/
