@@ -17,4 +17,11 @@ public class AgileboardApplication {
 		SpringApplication.run(AgileboardApplication.class, args);
 	}
 
+	@PostConstruct
+	public void started() {
+		System.out.println("✅ Spring Boot inició completamente");
+		
+	}
+
+
 }
