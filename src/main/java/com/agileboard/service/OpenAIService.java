@@ -15,7 +15,7 @@ public class OpenAIService {
 
     private final WebClient webClient = WebClient.builder()
             .baseUrl("https://api.openai.com/v1/chat/completions")
-            .defaultHeader("Authorization", "Bearer " + System.getenv("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")) // O usa la variable
+            .defaultHeader("Authorization", "Bearer " + openAiApiKey) // O usa la variable
             .defaultHeader("Content-Type", "application/json")
             .build();
 
